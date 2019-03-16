@@ -33,6 +33,10 @@ class ViewController: UIViewController {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     func showResults() {
         var result: String = ""
         var image: String = ""
@@ -55,9 +59,11 @@ class ViewController: UIViewController {
                 image = "obesidade"
         }
         
-        lbResult.text = result
+        lbResult.text = "\(Int(imc)): \(result)"
         ivResult.image = UIImage(named: image)
         viResult.isHidden = false
+        
+        view.endEditing(true)
     }
     
 }
