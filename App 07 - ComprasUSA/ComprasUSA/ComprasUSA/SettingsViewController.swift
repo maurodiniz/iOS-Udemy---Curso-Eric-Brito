@@ -10,21 +10,33 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var tfDolar: UITextField!
+    @IBOutlet weak var tfIOF: UITextField!
+    @IBOutlet weak var tfStateTaxes: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tfDolar.text = tc.getFormattedValue(of: tc.dolar, withCurrency: "")
+        tfIOF.text = tc.getFormattedValue(of: tc.iof, withCurrency: "")
+        tfStateTaxes.text = tc.getFormattedValue(of: tc.stateTax, withCurrency: "")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
-    */
+    
+    func setValues(){
+        tc.dolar = tc.convertToDouble(tfDolar.text!)
+        tc.iof = tc.convertToDouble(tfIOF.text!)
+        tc.stateTax = tc.convertToDouble(tfStateTaxes.text!)
+    }
+}
 
+// Extendendo a classe atual para que ela implemente o Delegate dos textFields
+extension SettingsViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        setValues()
+    }
 }
