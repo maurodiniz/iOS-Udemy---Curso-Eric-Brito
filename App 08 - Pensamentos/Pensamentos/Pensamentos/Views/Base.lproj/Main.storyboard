@@ -13,7 +13,7 @@
         <!--Pensamentos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pensamentos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuotesViewController" customModule="Pensamentos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,6 +71,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pensamentos" image="quotes" id="36M-we-d2B"/>
+                    <connections>
+                        <outlet property="ctQuote" destination="LiJ-r5-9mg" id="tuE-i7-ocQ"/>
+                        <outlet property="ivPhoto" destination="w7k-N8-RjL" id="Uaa-mw-hFW"/>
+                        <outlet property="ivPhotoBg" destination="jhA-Nh-yZa" id="855-In-3La"/>
+                        <outlet property="lbAuthor" destination="dYq-ar-nnP" id="Moo-BH-gax"/>
+                        <outlet property="lbQuote" destination="BZu-1z-xZJ" id="yzg-N3-9UI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,6 +89,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="qJU-cT-ms9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FSW-We-rbV">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" red="0.75294117650000003" green="0.37647058820000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,7 +106,7 @@
         <!--Configurações-->
         <scene sceneID="9UL-XS-GbB">
             <objects>
-                <viewController id="1zP-Kb-UDj" sceneMemberID="viewController">
+                <viewController id="1zP-Kb-UDj" customClass="SettingsViewController" customModule="Pensamentos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tLP-xb-Psi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,6 +144,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CRR-eI-NSO">
                                 <rect key="frame" x="135.5" y="58" width="51" height="31"/>
                                 <color key="onTintColor" red="0.75294117650000003" green="0.37647058820000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="ChangeAutoRefresh:" destination="1zP-Kb-UDj" eventType="valueChanged" id="02n-Xh-fqf"/>
+                                </connections>
                             </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLl-zM-mRZ">
                                 <rect key="frame" x="0.0" y="104" width="320" height="2"/>
@@ -154,6 +165,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="5" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="k1W-Wu-OTN">
                                 <rect key="frame" x="37" y="146" width="236" height="31"/>
                                 <color key="minimumTrackTintColor" red="0.75294117650000003" green="0.37647058820000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="ChangeTimeInterval:" destination="1zP-Kb-UDj" eventType="valueChanged" id="am9-dh-3Fx"/>
+                                </connections>
                             </slider>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vPL-5H-lxQ">
                                 <rect key="frame" x="24" y="240" width="272" height="29"/>
@@ -162,6 +176,9 @@
                                     <segment title="Escuro"/>
                                 </segments>
                                 <color key="tintColor" red="0.75294117650000003" green="0.37647058820000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="ChangeColorScheme:" destination="1zP-Kb-UDj" eventType="valueChanged" id="pYo-Ld-5gh"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -194,6 +211,12 @@
                         <viewLayoutGuide key="safeArea" id="iwN-Fr-qE4"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Configurações" image="settings" id="yhZ-al-GJM"/>
+                    <connections>
+                        <outlet property="lbTimeInterval" destination="gRx-S9-5bM" id="gw2-VN-YlC"/>
+                        <outlet property="scColorScheme" destination="vPL-5H-lxQ" id="G02-bJ-wJD"/>
+                        <outlet property="slTimeInterval" destination="k1W-Wu-OTN" id="Lsq-xm-AN5"/>
+                        <outlet property="swAutoRefresh" destination="CRR-eI-NSO" id="1vp-iF-edf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nu-aB-CfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

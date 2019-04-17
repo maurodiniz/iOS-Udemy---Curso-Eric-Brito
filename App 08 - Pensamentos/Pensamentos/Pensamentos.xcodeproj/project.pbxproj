@@ -14,6 +14,11 @@
 		261ADDC9226532BE003D104E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261ADDC7226532BE003D104E /* LaunchScreen.storyboard */; };
 		261ADDD2226533BD003D104E /* Savoye LET.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 261ADDD0226533BC003D104E /* Savoye LET.ttc */; };
 		261ADDD3226533BD003D104E /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 261ADDD1226533BD003D104E /* quotes.json */; };
+		2691D8E5226688A1000B3179 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D8E4226688A1000B3179 /* QuotesViewController.swift */; };
+		2691D8E722668906000B3179 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D8E622668906000B3179 /* SettingsViewController.swift */; };
+		2691D8EB22668CFA000B3179 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D8EA22668CFA000B3179 /* Quote.swift */; };
+		2691D8EE22668D5C000B3179 /* QuotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D8ED22668D5C000B3179 /* QuotesManager.swift */; };
+		2691D8F022668DF9000B3179 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D8EF22668DF9000B3179 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		261ADDCA226532BE003D104E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		261ADDD0226533BC003D104E /* Savoye LET.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Savoye LET.ttc"; sourceTree = "<group>"; };
 		261ADDD1226533BD003D104E /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
+		2691D8E4226688A1000B3179 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
+		2691D8E622668906000B3179 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2691D8EA22668CFA000B3179 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		2691D8ED22668D5C000B3179 /* QuotesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesManager.swift; sourceTree = "<group>"; };
+		2691D8EF22668DF9000B3179 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +70,12 @@
 			children = (
 				261ADDBE226532BD003D104E /* AppDelegate.swift */,
 				261ADDC0226532BD003D104E /* ViewController.swift */,
-				261ADDC2226532BD003D104E /* Main.storyboard */,
-				261ADDC5226532BE003D104E /* Assets.xcassets */,
-				261ADDC7226532BE003D104E /* LaunchScreen.storyboard */,
-				261ADDCA226532BE003D104E /* Info.plist */,
+				2691D8EC22668D25000B3179 /* Models */,
+				2691D8E922668981000B3179 /* Views */,
+				2691D8E82266893A000B3179 /* Controllers */,
 				261ADDD4226533C5003D104E /* Files */,
+				261ADDC5226532BE003D104E /* Assets.xcassets */,
+				261ADDCA226532BE003D104E /* Info.plist */,
 			);
 			path = Pensamentos;
 			sourceTree = "<group>";
@@ -76,6 +87,34 @@
 				261ADDD0226533BC003D104E /* Savoye LET.ttc */,
 			);
 			path = Files;
+			sourceTree = "<group>";
+		};
+		2691D8E82266893A000B3179 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2691D8E4226688A1000B3179 /* QuotesViewController.swift */,
+				2691D8E622668906000B3179 /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2691D8E922668981000B3179 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				261ADDC2226532BD003D104E /* Main.storyboard */,
+				261ADDC7226532BE003D104E /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2691D8EC22668D25000B3179 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2691D8EA22668CFA000B3179 /* Quote.swift */,
+				2691D8ED22668D5C000B3179 /* QuotesManager.swift */,
+				2691D8EF22668DF9000B3179 /* Configuration.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +191,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				261ADDC1226532BD003D104E /* ViewController.swift in Sources */,
+				2691D8E5226688A1000B3179 /* QuotesViewController.swift in Sources */,
+				2691D8F022668DF9000B3179 /* Configuration.swift in Sources */,
 				261ADDBF226532BD003D104E /* AppDelegate.swift in Sources */,
+				2691D8EB22668CFA000B3179 /* Quote.swift in Sources */,
+				2691D8EE22668D5C000B3179 /* QuotesManager.swift in Sources */,
+				2691D8E722668906000B3179 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
