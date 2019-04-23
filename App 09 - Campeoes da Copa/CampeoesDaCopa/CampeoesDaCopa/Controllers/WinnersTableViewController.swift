@@ -23,6 +23,17 @@ class WinnersTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // definindo a view controller de destino como sendo a WorldCupViewController
+        let vc = segue.destination as! WorldCupViewController
+        
+        // pegando a copa do mundo que est;a na célula que o usuario selecionou
+        let worldCup = worldCups[tableView.indexPathForSelectedRow!.row]
+        
+        // passando o objeto worldCup para o proximo viewController
+        vc.worldCup = worldCup
+    }
+    
     func loadWorldCups() {
         let fileURL = Bundle.main.url(forResource: "winners.json", withExtension: nil)!
         let jsonData = try! Data(contentsOf: fileURL)
@@ -48,10 +59,11 @@ class WinnersTableViewController: UITableViewController {
 
     // Esse método é chamado sempre que a tabela for apresentar alguma celula
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WorldCupTableViewCell
+        
         // Configure the cell...
-
+        let worldCup = worldCups[indexPath.row]
+        cell.prepare(with: worldCup)
         return cell
     }
 
