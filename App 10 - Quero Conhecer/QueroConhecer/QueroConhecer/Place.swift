@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-struct Place {
+struct Place: Codable {
     let name: String
     let latitude: CLLocationDegrees
     let longitude: CLLocationDegrees
@@ -54,5 +54,12 @@ struct Place {
         }
         
         return address
+    }
+}
+
+// Extensão criada para dizer como comparar dois Places, utilizando o protoclo Equatable
+extension Place: Equatable {
+    static func ==(lhs: Place, rhs: Place) -> Bool{
+        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
     }
 }

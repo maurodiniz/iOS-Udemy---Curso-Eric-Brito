@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		266603622279E41C0092C439 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266603612279E41C0092C439 /* PlaceAnnotation.swift */; };
 		2685288E22726861004445DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685288D22726861004445DA /* AppDelegate.swift */; };
 		2685289022726861004445DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685288F22726861004445DA /* ViewController.swift */; };
 		2685289322726861004445DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2685289122726861004445DA /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		266603612279E41C0092C439 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		2685288A22726861004445DA /* QueroConhecer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueroConhecer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2685288D22726861004445DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2685288F22726861004445DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				2685289922726862004445DA /* Info.plist */,
 				268528A422726BB1004445DA /* Controllers */,
 				268528A7227504AF004445DA /* Place.swift */,
+				266603612279E41C0092C439 /* PlaceAnnotation.swift */,
 			);
 			path = QueroConhecer;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				268528A8227504AF004445DA /* Place.swift in Sources */,
 				268528A6227276B2004445DA /* MapViewController.swift in Sources */,
 				268528A122726AC3004445DA /* PlacesTableViewController.swift in Sources */,
+				266603622279E41C0092C439 /* PlaceAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

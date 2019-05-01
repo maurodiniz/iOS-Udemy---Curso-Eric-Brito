@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -55,7 +54,7 @@
                     <navigationItem key="navigationItem" title="Quero Conhecer" id="SDu-YW-VMs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PdN-lF-xtD">
                             <connections>
-                                <segue destination="O2i-S8-rNX" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="yAl-0l-LqO"/>
+                                <segue destination="O2i-S8-rNX" kind="presentation" identifier="finderSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="yAl-0l-LqO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -9,6 +9,11 @@
 import UIKit
 import MapKit
 
+// protocolo criado para que qualquer classe que queira salvar um PLace, tenha que implementar o placeFinderDelegate primeiramente
+protocol placeFinderDelegate: class {
+    func addPlace(_ place: Place)
+}
+
 class PlaceFinderViewController: UIViewController {
 
     enum placeFinderMessageType {
@@ -22,6 +27,7 @@ class PlaceFinderViewController: UIViewController {
     @IBOutlet weak var viewLoading: UIView!
     
     var place: Place!
+    weak var delegate: placeFinderDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,7 +126,9 @@ class PlaceFinderViewController: UIViewController {
         alert.addAction(cancelAction)
         if hasConfirmation {
             let confirmAction = UIAlertAction(title: "Ok", style: .default) { (action) in
-                print("OK!!")
+                // Usando o delegate para salvar um placemark
+                self.delegate?.addPlace(self.place)
+                self.dismiss(animated: true, completion: nil)
             }
             alert.addAction(confirmAction)
         }
