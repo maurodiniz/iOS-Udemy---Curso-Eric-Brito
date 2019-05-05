@@ -88,6 +88,9 @@
                                         </constraints>
                                         <color key="barTintColor" name="main"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="69r-nN-fa0" id="g0B-wb-SBr"/>
+                                        </connections>
                                     </searchBar>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0T0-SV-End">
                                         <rect key="frame" x="0.0" y="50" width="310" height="231"/>
@@ -133,6 +136,10 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="PDt-Kp-eoG">
+                                <rect key="frame" x="141.5" y="263" width="37" height="37"/>
+                                <color key="color" name="main"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -142,8 +149,10 @@
                             <constraint firstItem="Caf-Ms-IXW" firstAttribute="trailing" secondItem="PVe-ki-KWp" secondAttribute="trailing" constant="5" id="dSK-FS-gOH"/>
                             <constraint firstItem="PVe-ki-KWp" firstAttribute="leading" secondItem="Caf-Ms-IXW" secondAttribute="leading" constant="5" id="fbv-mm-08v"/>
                             <constraint firstItem="mAJ-JF-35J" firstAttribute="top" secondItem="Caf-Ms-IXW" secondAttribute="top" id="fkv-tK-3w5"/>
+                            <constraint firstItem="PDt-Kp-eoG" firstAttribute="centerX" secondItem="0T0-SV-End" secondAttribute="centerX" id="kr4-3J-YQ9"/>
                             <constraint firstItem="PVe-ki-KWp" firstAttribute="top" secondItem="Caf-Ms-IXW" secondAttribute="top" constant="5" id="ngh-1c-uTf"/>
                             <constraint firstItem="mAJ-JF-35J" firstAttribute="leading" secondItem="Caf-Ms-IXW" secondAttribute="leading" id="s3W-Kb-uc7"/>
+                            <constraint firstItem="PDt-Kp-eoG" firstAttribute="centerY" secondItem="0T0-SV-End" secondAttribute="centerY" id="yTq-NZ-by4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Caf-Ms-IXW"/>
                     </view>
@@ -156,6 +165,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="aiLoading" destination="PDt-Kp-eoG" id="lyw-Do-Xwe"/>
                         <outlet property="lbAddress" destination="e7A-hX-O7V" id="OkY-lT-RaW"/>
                         <outlet property="lbName" destination="jLO-1Y-bTk" id="KsG-Kb-bIC"/>
                         <outlet property="mapView" destination="0T0-SV-End" id="ikA-Lg-zbe"/>
